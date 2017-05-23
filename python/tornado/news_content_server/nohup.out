@@ -1,0 +1,694 @@
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title= (124.16.137.12)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=', version='HTTP/1.1', remote_ip='124.16.137.12', headers={'Origin': 'http://localhost', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://localhost/FinanceVis/demo/newsDetail.html?date=2015-04-13&title='})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title= (124.16.137.12) 28.89ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=AppleMayTrytoBeatRecord$1BillionSamsungVerdict (180.153.214.197)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=AppleMayTrytoBeatRecord$1BillionSamsungVerdict', version='HTTP/1.1', remote_ip='180.153.214.197', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)', 'Connection': 'keep-alive', 'Referer': 'http://vis.ios.ac.cn/usr/wangl/FinanceVis/demo/newsDetail.html?date=2013-11-13&title=Apple%20May%20Try%20to%20Beat%20Record%20$1%20Billion%20Samsung%20Verdict'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=AppleMayTrytoBeatRecord$1BillionSamsungVerdict (180.153.214.197) 172.12ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=HTCBargainSeenLuringBidsFromLenovo,ZTE:RealM&A (101.226.68.197)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=HTCBargainSeenLuringBidsFromLenovo,ZTE:RealM&A', version='HTTP/1.1', remote_ip='101.226.68.197', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)', 'Connection': 'keep-alive', 'Referer': 'http://vis.ios.ac.cn/usr/wangl/FinanceVis/demo/newsDetail.html?date=2013-08-21&title=HTC%20Bargain%20Seen%20Luring%20Bids%20From%20Lenovo,%20ZTE:%20Real%20M%26A'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=HTCBargainSeenLuringBidsFromLenovo,ZTE:RealM&A (101.226.68.197) 66.07ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=MicrosoftExpandsItsXboxMusictoAndroid,AppleDevices (61.151.226.202)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=MicrosoftExpandsItsXboxMusictoAndroid,AppleDevices', version='HTTP/1.1', remote_ip='61.151.226.202', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://vis.ios.ac.cn/usr/wangl/FinanceVis/demo/newsDetail.html?date=2013-09-09&title=Microsoft%20Expands%20Its%20Xbox%20Music%20to%20Android,%20Apple%20Devices'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=MicrosoftExpandsItsXboxMusictoAndroid,AppleDevices (61.151.226.202) 45.70ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=SharpSaidtoTarget100BillionYenFundraisingonShareSale (180.153.214.192)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=SharpSaidtoTarget100BillionYenFundraisingonShareSale', version='HTTP/1.1', remote_ip='180.153.214.192', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)', 'Connection': 'keep-alive', 'Referer': 'http://vis.ios.ac.cn/usr/wangl/FinanceVis/demo/newsDetail.html?date=2013-08-01&title=Sharp%20Said%20to%20Target%20100%20Billion%20Yen%20Fundraising%20on%20Share%20Sale'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=SharpSaidtoTarget100BillionYenFundraisingonShareSale (180.153.214.192) 32.09ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=SharpConsideringWaystoRaiseCapitalAmidShareSaleReport (101.226.33.204)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=SharpConsideringWaystoRaiseCapitalAmidShareSaleReport', version='HTTP/1.1', remote_ip='101.226.33.204', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)', 'Connection': 'keep-alive', 'Referer': 'http://vis.ios.ac.cn/usr/wangl/FinanceVis/demo/newsDetail.html?date=2013-08-01&title=Sharp%20Considering%20Ways%20to%20Raise%20Capital%20Amid%20Share%20Sale%20Report'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=SharpConsideringWaystoRaiseCapitalAmidShareSaleReport (101.226.33.204) 38.89ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=AppleMayTrytoBeatRecord$1BillionSamsungVerdict (101.226.33.240)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=AppleMayTrytoBeatRecord$1BillionSamsungVerdict', version='HTTP/1.1', remote_ip='101.226.33.240', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=AppleMayTrytoBeatRecord$1BillionSamsungVerdict (101.226.33.240) 42.98ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=SharpConsideringWaystoRaiseCapitalAmidShareSaleReport (180.153.214.189)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=SharpConsideringWaystoRaiseCapitalAmidShareSaleReport', version='HTTP/1.1', remote_ip='180.153.214.189', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://vis.ios.ac.cn/usr/wangl/FinanceVis/demo/newsDetail.html?date=2013-08-01&title=Sharp%20Considering%20Ways%20to%20Raise%20Capital%20Amid%20Share%20Sale%20Report'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=SharpConsideringWaystoRaiseCapitalAmidShareSaleReport (180.153.214.189) 2.04ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift (101.226.33.223)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift', version='HTTP/1.1', remote_ip='101.226.33.223', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://vis.ios.ac.cn/usr/wangl/FinanceVis/demo/newsDetail.html?date=2008-07-21&title=Yahoo%20and%20Icahn%20settle,%20Microsoft%20deal%20seen%20adrift'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift (101.226.33.223) 23.42ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift (101.226.51.229)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift', version='HTTP/1.1', remote_ip='101.226.51.229', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift (101.226.51.229) 2.04ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift (180.153.81.212)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift', version='HTTP/1.1', remote_ip='180.153.81.212', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift (180.153.81.212) 1.71ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift (180.153.206.21)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift', version='HTTP/1.1', remote_ip='180.153.206.21', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift (180.153.206.21) 1.73ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift (101.226.89.117)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift', version='HTTP/1.1', remote_ip='101.226.89.117', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch, br', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=YahooandIcahnsettle,Microsoftdealseenadrift (101.226.89.117) 2.08ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Apple%20to%20open%20R (124.16.137.11)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Apple%20to%20open%20R', version='HTTP/1.1', remote_ip='124.16.137.11', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepStockVis/demo/newsDetail.html?date=2011-12-15&title=Apple%20to%20open%20R&D%20center%20in%20Israel:%20report'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Apple%20to%20open%20R (124.16.137.11) 66.95ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Apple%20to%20open%20R (124.16.137.11)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Apple%20to%20open%20R', version='HTTP/1.1', remote_ip='124.16.137.11', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepStockVis/demo/newsDetail.html?date=2011-12-15&title=Apple%20to%20open%20R&D%20center%20in%20Israel:%20report'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Apple%20to%20open%20R (124.16.137.11) 5.51ms
+ERROR:tornado.application:Uncaught exception GET /getPeriodNewsList?source=twitter&symbol=AAPL&start_date=2015-04-13&end_date=2015-11-04&id=0.9295127224234034 (124.16.137.11)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getPeriodNewsList?source=twitter&symbol=AAPL&start_date=2015-04-13&end_date=2015-11-04&id=0.9295127224234034', version='HTTP/1.1', remote_ip='124.16.137.11', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepClue/demo/'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1467, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "news_content.py", line 94, in get
+    self.write(json.dumps(dic_result))
+  File "/usr/local/python27/lib/python2.7/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/local/python27/lib/python2.7/json/encoder.py", line 201, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/python27/lib/python2.7/json/encoder.py", line 264, in iterencode
+    return _iterencode(o, 0)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0x85 in position 139: invalid start byte
+ERROR:tornado.access:500 GET /getPeriodNewsList?source=twitter&symbol=AAPL&start_date=2015-04-13&end_date=2015-11-04&id=0.9295127224234034 (124.16.137.11) 29159.11ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Apple%20Results%20Distorting%20S (123.122.139.133)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Apple%20Results%20Distorting%20S', version='HTTP/1.1', remote_ip='123.122.139.133', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepClue/demo/newsDetail.html?date=2012-02-07&title=Apple%20Results%20Distorting%20S&P%20500%20Earnings,%20Golub%20Says:%20Tom%20Keene'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Apple%20Results%20Distorting%20S (123.122.139.133) 23.68ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Apple%20Results%20Distorting%20S (123.122.139.133)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Apple%20Results%20Distorting%20S', version='HTTP/1.1', remote_ip='123.122.139.133', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepClue/demo/newsDetail.html?date=2012-02-07&title=Apple%20Results%20Distorting%20S&P%20500%20Earnings,%20Golub%20Says:%20Tom%20Keene'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Apple%20Results%20Distorting%20S (123.122.139.133) 2.10ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Egypt%20Shares%20Advance%20on%20Global%20Economic%20Recovery;%20Dubai%20Drops%20on%20Earnings (124.16.137.12)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Egypt%20Shares%20Advance%20on%20Global%20Economic%20Recovery;%20Dubai%20Drops%20on%20Earnings', version='HTTP/1.1', remote_ip='124.16.137.12', headers={'Origin': 'http://localhost', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://localhost/FinanceVis/demo/newsDetail.html?date=2010-07-25&title=Egypt%20Shares%20Advance%20on%20Global%20Economic%20Recovery;%20Dubai%20Drops%20on%20Earnings'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Egypt%20Shares%20Advance%20on%20Global%20Economic%20Recovery;%20Dubai%20Drops%20on%20Earnings (124.16.137.12) 5.49ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Stocks%20Close%20Little%20Changed;%20AstraZeneca%20Rises%20as%20Unilever%20Shares%20Retreat (124.16.137.12)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Stocks%20Close%20Little%20Changed;%20AstraZeneca%20Rises%20as%20Unilever%20Shares%20Retreat', version='HTTP/1.1', remote_ip='124.16.137.12', headers={'Origin': 'http://localhost', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://localhost/FinanceVis/demo/newsDetail.html?date=2010-07-29&title=Stocks%20Close%20Little%20Changed;%20AstraZeneca%20Rises%20as%20Unilever%20Shares%20Retreat'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Stocks%20Close%20Little%20Changed;%20AstraZeneca%20Rises%20as%20Unilever%20Shares%20Retreat (124.16.137.12) 65.11ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (124.16.137.12)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', version='HTTP/1.1', remote_ip='124.16.137.12', headers={'Origin': 'http://localhost', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://localhost/FinanceVis/demo/newsDetail.html?date=2010-07-29&title=RadioShack%20quarterly%20profit%20rises;%20shares%20up'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (124.16.137.12) 21.00ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (124.16.137.12)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', version='HTTP/1.1', remote_ip='124.16.137.12', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Connection': 'keep-alive', 'Upgrade-Insecure-Requests': '1'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (124.16.137.12) 2.13ms
+WARNING:tornado.access:404 GET /favicon.ico (124.16.137.12) 11.04ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (124.16.137.12)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', version='HTTP/1.1', remote_ip='124.16.137.12', headers={'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Connection': 'keep-alive', 'Upgrade-Insecure-Requests': '1'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (124.16.137.12) 4.09ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (171.8.167.67)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', version='HTTP/1.1', remote_ip='171.8.167.67', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'identity', 'X-Forwarded-For': 'unknown', 'Connection': 'keep-alive', 'User-Agent': 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; Tablet PC 2.0)', 'Host': '211.147.15.14:6693', 'Referer': 'http://211.147.15.14:6693/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', 'Cache-Control': 'max-age=259200'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (171.8.167.67) 3.15ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (171.13.14.132)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', version='HTTP/1.1', remote_ip='171.13.14.132', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'identity', 'X-Forwarded-For': 'unknown', 'Connection': 'keep-alive', 'User-Agent': 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; Tablet PC 2.0)', 'Host': '211.147.15.14:6693', 'Referer': 'http://211.147.15.14:6693/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', 'Cache-Control': 'max-age=259200'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (171.13.14.132) 1.79ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (101.199.112.45)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', version='HTTP/1.1', remote_ip='101.199.112.45', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate', 'Host': '211.147.15.14:6693', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Linux; U; Android 5.0.2; zh-CN; Redmi Note 3 Build/LRX22G) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 OPR/11.2.3.102637 Mobile Safari/537.36', 'Accept-Charset': 'iso-8859-1,*,utf-8', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (101.199.112.45) 2.10ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (171.13.14.152)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', version='HTTP/1.1', remote_ip='171.13.14.152', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate', 'X-Forwarded-For': 'unknown', 'Host': '211.147.15.14:6693', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Linux; U; Android 5.0.2; zh-CN; Redmi Note 3 Build/LRX22G) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 OPR/11.2.3.102637 Mobile Safari/537.36', 'Accept-Charset': 'iso-8859-1,*,utf-8', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (171.13.14.152) 2.06ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (171.13.14.152)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', version='HTTP/1.1', remote_ip='171.13.14.152', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate', 'X-Forwarded-For': 'unknown', 'Host': '211.147.15.14:6693', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Linux; U; Android 5.0.2; zh-CN; Redmi Note 3 Build/LRX22G) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 OPR/11.2.3.102637 Mobile Safari/537.36', 'Accept-Charset': 'iso-8859-1,*,utf-8', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=259200'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (171.13.14.152) 2.17ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (119.188.70.22)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', version='HTTP/1.0', remote_ip='119.188.70.22', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate', 'Host': '211.147.15.14:6693', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Linux; U; Android 5.0.2; zh-CN; Redmi Note 3 Build/LRX22G) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 OPR/11.2.3.102637 Mobile Safari/537.36', 'Accept-Charset': 'iso-8859-1,*,utf-8', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (119.188.70.22) 1.75ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (171.13.14.152)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', version='HTTP/1.1', remote_ip='171.13.14.152', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate', 'X-Forwarded-For': 'unknown', 'Host': '211.147.15.14:6693', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Linux; U; Android 5.0.2; zh-CN; Redmi Note 3 Build/LRX22G) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 OPR/11.2.3.102637 Mobile Safari/537.36', 'Accept-Charset': 'iso-8859-1,*,utf-8', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=259200'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (171.13.14.152) 2.19ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (182.118.20.155)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up', version='HTTP/1.1', remote_ip='182.118.20.155', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate', 'X-Forwarded-For': 'unknown', 'Host': '211.147.15.14:6693', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Linux; U; Android 5.0.2; zh-CN; Redmi Note 3 Build/LRX22G) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 OPR/11.2.3.102637 Mobile Safari/537.36', 'Accept-Charset': 'iso-8859-1,*,utf-8', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=RadioShack%20quarterly%20profit%20rises;%20shares%20up (182.118.20.155) 1.77ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Apple%20Results%20Distorting%20S (124.16.137.11)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Apple%20Results%20Distorting%20S', version='HTTP/1.1', remote_ip='124.16.137.11', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepClue/demo/newsDetail.html?date=2012-02-07&title=Apple%20Results%20Distorting%20S&P%20500%20Earnings,%20Golub%20Says:%20Tom%20Keene'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Apple%20Results%20Distorting%20S (124.16.137.11) 2.11ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles (124.16.137.11)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles', version='HTTP/1.1', remote_ip='124.16.137.11', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepClue/demo/newsDetail.html?date=2014-12-01&title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles (124.16.137.11) 17.67ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles (124.16.137.11)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles', version='HTTP/1.1', remote_ip='124.16.137.11', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepClue/demo/newsDetail.html?date=2014-12-01&title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles (124.16.137.11) 2.25ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles (124.16.137.11)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles', version='HTTP/1.1', remote_ip='124.16.137.11', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepClue/demo/newsDetail.html?date=2014-12-01&title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Wall%20Street%20falls%20in%20broad%20decline;%20Apple%20stumbles (124.16.137.11) 2.25ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Apple%27s%20iPhone%20sales,%20revenue%20forecast%20fall%20short;%20shares%20slide (124.16.137.11)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Apple%27s%20iPhone%20sales,%20revenue%20forecast%20fall%20short;%20shares%20slide', version='HTTP/1.1', remote_ip='124.16.137.11', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepClue/demo/newsDetail.html?date=2014-01-28&title=Apple%27s%20iPhone%20sales,%20revenue%20forecast%20fall%20short;%20shares%20slide'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Apple%27s%20iPhone%20sales,%20revenue%20forecast%20fall%20short;%20shares%20slide (124.16.137.11) 2.13ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Apple%27s%20iPhone%20sales,%20revenue%20forecast%20fall%20short;%20shares%20slide (124.16.137.11)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Apple%27s%20iPhone%20sales,%20revenue%20forecast%20fall%20short;%20shares%20slide', version='HTTP/1.1', remote_ip='124.16.137.11', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepClue/demo/newsDetail.html?date=2014-01-28&title=Apple%27s%20iPhone%20sales,%20revenue%20forecast%20fall%20short;%20shares%20slide'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Apple%27s%20iPhone%20sales,%20revenue%20forecast%20fall%20short;%20shares%20slide (124.16.137.11) 2.16ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=Wall%20Street%20snaps%20six-day%20run;%20Apple%20to%20split%20stock (124.16.137.11)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=Wall%20Street%20snaps%20six-day%20run;%20Apple%20to%20split%20stock', version='HTTP/1.1', remote_ip='124.16.137.11', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepClue/demo/newsDetail.html?date=2014-04-23&title=Wall%20Street%20snaps%20six-day%20run;%20Apple%20to%20split%20stock'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=Wall%20Street%20snaps%20six-day%20run;%20Apple%20to%20split%20stock (124.16.137.11) 12.85ms
+ERROR:tornado.application:Uncaught exception GET /getNewsContent?title=DISH%20says%20AT (103.24.77.25)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getNewsContent?title=DISH%20says%20AT', version='HTTP/1.1', remote_ip='103.24.77.25', headers={'Origin': 'http://211.147.15.14', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4,ja;q=0.2', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36', 'Dnt': '1', 'Connection': 'keep-alive', 'Referer': 'http://211.147.15.14/DeepClue/demo/newsDetail.html?date=2008-07-01&title=DISH%20says%20AT&T%20to%20end%20partnership%20at%20year-end'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1469, in _execute
+    result = yield result
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1015, in run
+    value = future.result()
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/concurrent.py", line 237, in result
+    raise_exc_info(self._exc_info)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1097, in handle_yield
+    self.future = convert_yielded(yielded)
+  File "/usr/local/python27/lib/python2.7/site-packages/singledispatch.py", line 210, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/gen.py", line 1229, in convert_yielded
+    raise BadYieldError("yielded unknown object %r" % (yielded,))
+BadYieldError: yielded unknown object 'exception!'
+ERROR:tornado.access:500 GET /getNewsContent?title=DISH%20says%20AT (103.24.77.25) 64.10ms
+WARNING:tornado.access:404 GET /favicon.ico (124.16.137.12) 10.91ms
+WARNING:tornado.access:404 GET /favicon.ico (124.16.137.12) 0.70ms
+ERROR:tornado.application:Uncaught exception GET /getPeriodNewsList?source=twitter&symbol=AAPL&start_date=2015-04-13&end_date=2015-11-04&id=0.020271485231513786 (124.16.137.12)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getPeriodNewsList?source=twitter&symbol=AAPL&start_date=2015-04-13&end_date=2015-11-04&id=0.020271485231513786', version='HTTP/1.1', remote_ip='124.16.137.12', headers={'Origin': 'http://localhost', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://localhost/FinanceVis/demo/'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1467, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "news_content.py", line 99, in get
+    self.write(json.dumps(dic_result))
+  File "/usr/local/python27/lib/python2.7/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/local/python27/lib/python2.7/json/encoder.py", line 201, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/python27/lib/python2.7/json/encoder.py", line 264, in iterencode
+    return _iterencode(o, 0)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0x85 in position 139: invalid start byte
+ERROR:tornado.access:500 GET /getPeriodNewsList?source=twitter&symbol=AAPL&start_date=2015-04-13&end_date=2015-11-04&id=0.020271485231513786 (124.16.137.12) 385.77ms
+ERROR:tornado.application:Uncaught exception GET /getPeriodNewsList?source=twitter&symbol=AAPL&start_date=2015-04-13&end_date=2015-11-04&id=0.12727231824365703 (124.16.137.12)
+HTTPServerRequest(protocol='http', host='211.147.15.14:6693', method='GET', uri='/getPeriodNewsList?source=twitter&symbol=AAPL&start_date=2015-04-13&end_date=2015-11-04&id=0.12727231824365703', version='HTTP/1.1', remote_ip='124.16.137.12', headers={'Origin': 'http://localhost', 'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '211.147.15.14:6693', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://localhost/FinanceVis/demo/'})
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/tornado/web.py", line 1467, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "news_content.py", line 99, in get
+    self.write(json.dumps(dic_result))
+  File "/usr/local/python27/lib/python2.7/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/local/python27/lib/python2.7/json/encoder.py", line 201, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/python27/lib/python2.7/json/encoder.py", line 264, in iterencode
+    return _iterencode(o, 0)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0x85 in position 139: invalid start byte
+ERROR:tornado.access:500 GET /getPeriodNewsList?source=twitter&symbol=AAPL&start_date=2015-04-13&end_date=2015-11-04&id=0.12727231824365703 (124.16.137.12) 382.80ms

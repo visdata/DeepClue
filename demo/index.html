@@ -1,0 +1,1147 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>DeepClue</title>
+<style>
+
+    /*widow size: 1366 * 660*/
+
+    * {
+        /*font-family: "Microsoft Yahei",Heiti, arial,helvetica,sans-serif !important;*/
+        font-family: arial,helvetica,sans-serif !important;
+        /*font-size: 0.8em;*/
+        list-style:none;
+    }
+
+    body,div,svg,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,input,textarea,p,blockquote,th,td,hr,button,article,aside,figcaption,figure,footer,header,menu,nav,section {
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        height: 99%;
+    }
+
+    body {
+        /*background-color: rgb(245,245,245);*/
+    }
+
+    svg {
+        font: 10px sans-serif;
+        /*font: 10px;*/
+        width: 100%;
+        height: 100%;
+    }
+
+    #div_title {
+        background-color: rgb(40, 40, 40);
+        height: 40px;
+        line-height: 40px;
+        vertical-align: middle;
+    }
+
+    #middle {
+        height: 90%;
+        /*border: 1px red solid;*/
+    }
+
+    #margin_title {
+        width: 15px;
+        height: 100%;
+        float: left;
+        background-color: rgb(0, 128, 0);
+        /*background-color: rgb(200, 20, 20);*/
+    }
+
+    #title, #div_data_source {
+        font: 23px bold;
+        color: white;
+        margin-left: 10px;
+        line-height: 40px;
+        float: left;
+        vertical-align: middle;
+    }
+
+    #div_data_source label {
+        font: 18px bold;
+        line-height: 35px;
+        vertical-align: middle;
+    }
+    
+    #select_stock {
+        float: right;
+        color: white;
+        margin-right: 20px;
+        font: 20px bold;
+        line-height: 35px;
+        vertical-align: middle;
+    }
+
+    #symbol {
+        font-size: 18px;
+    }
+
+    .div_chart {
+        margin-top: 10px;
+        margin-left: 10px;
+        /*border-top: #2c2c2c 5px solid;*/
+        border-left: 2px black solid;
+    }
+
+    #div_zoom {
+        margin-left: 0px;
+        margin-top: 5px;
+        height: 22px;
+    }
+
+    #svg_zoom {
+        width: 45%;
+        height: 100%;
+        float: left;
+    }
+
+    .zoom_option{
+        cursor: pointer;
+    }
+    #div_source_label {
+        float: left;
+    }
+    .data_source {
+        float: left;
+        font-style: italic;
+        margin-left: 10px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    .data_source_label {
+        font-size: 15px;
+    }
+
+    #div_overview {
+        /*height: 11%;*/
+        height: 80px;
+    }
+    
+    #div_stock {
+        height: 37%;
+    }
+
+    #div_keyword_line {
+        border-top: #2c2c2c 5px solid;
+        height: 55%;
+        min-height: 350px;
+    }
+
+    #div_init_keyword {
+        float: left;
+        margin-top: 5px;
+    }
+
+    .expand_line {
+        stroke: gray;
+    }
+
+    .div_keywordLine {
+        /*margin-left: 20px;*/
+    }
+    
+    .control {
+        width: 100px;
+        height: 100%;
+        float: left;
+        background-color: rgb(219, 219, 219);
+    }
+
+    .control span {
+        margin-top: 4px;
+        margin-left: 5px;
+        float: left;
+    }
+
+    #svg_overview_period {
+        margin-left: 5px;
+        /*border: 1px red solid;*/
+        width: 10px;
+        height: 50%;
+        float: left;
+    }
+    .control #zoom {
+        margin-top: 2px;
+        /*margin-left: 25px;*/
+        font-size: 15px;
+        font-weight: bold;
+        /*margin-top: 4px;*/
+        /*float: left;*/
+    }
+
+    .control .title {
+        margin-top: 5px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .control .control_title {
+        margin-top: 5px;
+        margin-left: 5px;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    .option text {
+        margin-left: 2px;
+    }
+    /*#select_POS .option {*/
+        /*float: left;*/
+    /*}*/
+
+    #btn_reset {
+        width: 18px;
+        height: 18px;
+        margin-left: 5px;
+    }
+
+    .control select {
+        margin-left: 5px;
+    }
+    
+    .div_radio {
+        margin-left: 10px;
+        font-size: 12px;
+        margin-top: 5px;
+        /*border: 1px red solid;*/
+    }
+    
+    .option {
+        margin-left: -5px;
+    }
+
+    .period {
+        font-size: 10px;
+    }
+
+    #div_context {
+        float: left;
+        height: 77px;
+        /*width: 100%;*/
+    }
+
+    #detail {
+        height: 100%;
+        float: right;
+        width: 300px;
+        /*margin-top: 10px;*/
+    }
+
+    #div_chart {
+        /*width: 77%;*/
+        /*width: auto;*/
+        /*float: none;*/
+        height: 100%;
+        margin-right: 320px;
+        /*border: 2px green solid;*/
+        /*float: left;*/
+    }
+
+    
+    #factor {
+        /*height: 300px;*/
+        height: 37%; /*+100px*/
+        border-left: black 2px solid;
+        background-color: rgb(245, 245, 245);
+        /*overflow-y: auto;*/
+        /*overflow-x: hidden;*/
+    }
+
+    /* 设置滚动条的样式 */
+    #factor::-webkit-scrollbar {
+        width: 8px;
+    }
+    /* 滚动槽 */
+    /*::-webkit-scrollbar-track {*/
+        /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+        /*border-radius: 10px;*/
+    /*}*/
+    /* 滚动条滑块 */
+    #factor::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: rgba(0,0,0,0.1);
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }
+    #factor::-webkit-scrollbar-thumb:window-inactive {
+        /*background: rgba(255,0,0,0.4);*/
+    }
+
+    #div_factor_title, #div_contour_title {
+        height: 30px;
+        line-height: 30px;
+        vertical-align: middle;
+        text-align: center;
+        background-color: rgb(60, 60, 60);
+        /*background-color: rgb(190, 190, 190);*/
+    }
+
+    #factor_title, #contour_title {
+        color: white;
+        font:18px bold;
+        cursor: pointer;
+    }
+
+    #newsCon .tag {
+        display: none;
+    }
+
+    #newsCon .tag.tag_cur {
+        display: block;
+    }
+
+    #candidate {
+        margin-top: 5px;
+    }
+    #div_keyword {
+        /*margin-top: 10px;*/
+        width: 100%;
+        /*margin-left: 10px;*/
+        /*border: 1px red solid;*/
+        /*height: 50px;*/
+    }
+    #div_add_keyword {
+        margin-top: 5px;
+        width: 100%;
+        /*margin-left: 10px;*/
+    }
+
+    .keyword {
+        float: left;
+        width: 30%;
+        font-style: italic;
+        margin-left: 5px;
+        /*cursor: pointer;*/
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .keyword_label, .keyword_candidate {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .keyword_label.highlight {
+        font-weight: bold;
+    }
+
+    .btn {
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        border-radius: 3px;
+        border: 1px gray solid;
+    }
+
+    .icon {
+        width: 12px;
+        height: 12px;
+        vertical-align: text-top;
+        margin-left: 2px;
+        display: none;
+    }
+
+    .icon.show {
+        display: inline;
+    }
+    
+    .icon.show:hover {
+        width: 14px;
+        height: 14px;
+    }
+
+    #contour {
+        height: 330px;
+        width: 300px;
+        float: right;
+        margin-top: 10px;
+        background-color: rgb(255,255,255);
+        /*border-top: #2c2c2c 5px solid;*/
+        border-left: 2px black solid;
+    }
+
+    #tab_contour {
+        width: 100%;
+        height: 30px;
+        float: left;
+        /*border: solid red 1px;*/
+    }
+
+    #div_contour {
+        /*border: 1px red solid;*/
+        height: 300px;
+        width: 300px;
+    }
+    
+    #svg_contour {
+        /*margin-top: 30px;*/
+        width: 300px;
+    }
+
+    .btn_switch {
+        cursor: pointer;
+    }
+
+    .image_zoom {
+        cursor: pointer;
+    }
+
+    #slider_contour {
+        float: right;
+        margin-right: 40px;
+        margin-top: 20px;
+        /*width: 20px;*/
+        /*height: 250px;*/
+        /*border: 1px red solid;*/
+    }
+
+    #div_contour_type {
+        float: left;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .contour_type {
+        margin-left: 1px;
+        float: left;
+        background-color: rgb(200, 200, 200);
+        width: 40px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .contour_type.cur {
+        color: red;
+        background-color: rgb(245, 245, 245);
+    }
+
+    #slider .slider-selection {
+        background: #81bfde;
+    }
+
+    #slider .slider-rangeHighlight {
+        background: #f70616;
+    }
+
+
+    .tab li
+    {
+        float: left;
+        text-align: center;
+    }
+
+    .tab li {
+        height:30px;
+        margin-left: 0;
+        cursor: pointer;
+        line-height: 30px;
+        vertical-align: middle;
+        background: rgb(154, 157, 162);
+        /*background: rgb(219,219,219);*/
+    }
+
+    #tab_contour li {
+        width: 50%;
+    }
+
+    #tab_factors li {
+        width: 32.5%;
+        height:25px;
+        line-height: 25px;
+        /*width: 97px;*/
+        margin-left: 1px;
+    }
+
+    .tab li.cur {
+        background: rgb(245, 245, 245);
+        /*background-image: url(img/curr.png);*/
+        background-size: 15px;
+        background-repeat: no-repeat;
+	    background-position: 85% 50%;
+        /*background: gray;*/
+    }
+
+    /*#tab_contour li #down {*/
+        /*border-left: 2px black solid;*/
+    /*}*/
+
+    .tab a
+    {
+        color: black;
+        font: 10px bolder;
+        text-decoration: none;
+        display: block;
+    }
+
+    .factor_type {
+        background: white;
+    }
+    .factor_type.cur
+    {
+        background: rgb(245, 245, 245);
+        background-image: url(img/curr.png);
+        background-size: 15px;
+        background-repeat: no-repeat;
+	    background-position: 85% 50%;
+	    /*background-position: center right;*/
+    }
+
+    #factorCon {
+        /*margin-top: -5px;*/
+        background-color: rgb(245, 245, 245);
+    }
+    
+    #recommendOption {
+        height: 30px;
+        /*border: 1px red solid;*/
+    }
+
+    #recommendOption .option_recommend {
+        /*margin-top: 5px;*/
+        width: 42%;
+        height: 30px;
+        margin-left: 4%;
+        float: left;
+        line-height: 28px;
+        vertical-align: middle;
+        text-align: center;
+        background-color: rgb(200,200,200);
+        cursor: pointer;
+        border-radius: 5px;
+        color: white;
+    }
+
+    #recommendOption .option_recommend:hover {
+        background-color: rgb(180,180,180);
+    }
+
+    #box_keyword {
+        width: 70px;
+        float: left;
+        margin-left: 3px;
+        margin-right: 2px;
+        background-color: rgb(219,219,219);
+        padding: 1px;
+        border:1px solid #fff;
+    }
+
+    .ui-draggable, .ui-droppable {
+        background-position: top;
+    }
+
+    .btn_keyword, .btn_expand {
+        width: 13px;
+        height: 13px;
+        margin-top: 3px;
+        border-radius: 3px;
+        border: 1px gray solid;
+        cursor: pointer;
+    }
+    #btn_add {
+        float: left;
+        margin-top: 2px;
+        margin-left: 2px;
+    }
+
+    #key_hint {
+        /*width: 100%;*/
+        margin-left: 2px;
+        float: left;
+    }
+
+    #div_sort {
+        height: auto;
+        padding-bottom: 5px;
+    }
+
+    #factorList li {
+        width:50%;
+        height:30px;
+        margin-left: 0;
+        cursor: pointer;
+        line-height: 30px;
+        vertical-align: middle;
+    }
+
+    #div_list {
+        float: none;
+        margin-top: 0px;
+        background-color: rgb(245, 245, 245);
+    }
+
+    #news_list {
+        width: 100%;
+        margin-top: 8px;
+        /*height: 215px;*/
+        overflow-y: scroll;
+        background-color: rgb(245, 245, 245);
+    }
+
+    #news_info {
+        clear: both;
+        overflow-x: hidden;
+        margin-left: 10px;
+    }
+
+    .highlight_keyword {
+        font-weight: bold;
+    }
+
+    /* 设置滚动条的样式 */
+    #news_list::-webkit-scrollbar {
+        width: 8px;
+    }
+    /* 滚动槽 */
+    /*::-webkit-scrollbar-track {*/
+        /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+        /*border-radius: 10px;*/
+    /*}*/
+    /* 滚动条滑块 */
+    #news_list::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: rgba(0,0,0,0.1);
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }
+    #news_list::-webkit-scrollbar-thumb:window-inactive {
+        /*background: rgba(255,0,0,0.4);*/
+    }
+    
+    #div_list .record {
+        margin-top: 10px;
+    }
+
+    #div_sort .order {
+        float: left;
+        margin-left: 10px;
+        margin-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .order .sort {
+        background-image: url(img/bg.gif);
+	    background-repeat: no-repeat;
+	    background-position: center right;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .order .sort.rise {
+        background-image: url(img/asc.gif);
+    }
+    .order .sort.down {
+        background-image: url(img/desc.gif);
+    }
+
+    .order .sort:hover {
+        cursor: pointer;
+    }
+
+    #div_list .record {
+        margin-left: 5px;
+    }
+
+    #div_list .record a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #div_list .record .news_content {
+        padding: 2px;
+        margin-top: 8px;
+    }
+
+    #div_list .record .news_url {
+        text-decoration: underline;
+        color: blue;
+    }
+    #div_list .record text.rise {
+        color: rgb(5, 128, 20);
+    }
+
+    #div_list .record text.down {
+        color: red;
+    }
+
+    #div_list .record text.date {
+        color: gray;
+        float: right;
+        margin-right: 5px;
+    }
+
+    .cutoff {
+        margin-bottom: 10px;
+    }
+
+    #canvas_chart {
+        /*width: 100%;*/
+        height: 100%;
+        float: left;
+        z-index: 998;
+        /*border: solid red 1px;*/
+        /*height: 200px;*/
+    }
+
+    .curveLegend {
+        cursor: pointer;
+    }
+    .legend_actual {
+        cursor: pointer;
+        stroke: steelblue;
+    }
+    .legend_yield {
+        cursor: pointer;
+        stroke: red;
+    }
+    .legend_predicted {
+        cursor: pointer;
+        stroke: green;
+        stroke-dasharray: 5 10;
+    }
+    .legend_risk {
+        cursor: pointer;
+        fill: steelblue;
+        fill-opacity: 0.25;
+        /*fill: rgb(230, 230, 255);*/
+    }
+
+    .keywordLegend {
+        cursor: pointer;
+        /*font-size: 18px;*/
+    }
+
+    #div_price {
+        /*border: red solid 1px;*/
+        z-index: 1;
+    }
+
+    #svg_x_price, #svg_price {
+        /*margin: 0;*/
+        /*border: solid red 1px;*/
+        height: 100%;
+    }
+
+    input[type="text"].date {
+        vertical-align: middle;
+        width: 100px;
+        background:url("img/date_icon.gif") no-repeat scroll right center white;
+    }
+
+    #spinner {
+        z-index: 999;
+        margin-left: 40%;
+        position: absolute;
+        top: 20%;
+    }
+
+    #spinner_contour {
+        z-index: 999;
+        margin-left: 10%;
+        position: absolute;
+        top: 80%;
+    }
+
+    #spinner_factor_list {
+        z-index: 999;
+        margin-left: 9%;
+        position: absolute;
+        top: 65%;
+    }
+
+    #spinner_factor {
+        z-index: 999;
+        margin-left: 15%;
+        position: absolute;
+        top: 65%;
+    }
+
+    #spinner_keyword_line {
+        z-index: 999;
+        margin-left: 40%;
+        position: absolute;
+        top: 80%;
+    }
+
+    #spinner_news_list {
+        z-index: 999;
+        margin-left: 10%;
+        position: absolute;
+        top: 35%;
+    }
+
+    .brush_price .extent, .brush_context .extent , .brush_keyword .extent {
+        /*stroke: red;*/
+        stroke: #fff;
+        fill: steelblue;
+        fill-opacity: .25;
+    }
+
+    .resize path {
+        fill: #eee;
+        stroke: #666;
+    }
+
+    .unit {
+        stroke: #ccc;
+        stroke-width: 0.5px;
+        stop-opacity: 0.5;
+    }
+
+    .unit.selected {
+        fill: #fff;
+        stroke: #ccc;
+        fill-opacity: .5;
+    }
+
+    #div_select {
+        width: 150px;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .area {
+        fill: steelblue;
+        clip-path: url(#clip);
+    }
+
+    .tips {
+        pointer-events: none;
+        display: none;
+    }
+
+    .tips-border {
+        fill: rgba(243, 228, 228, 0.3);
+        stroke: gray;
+        stroke-width: 1;
+    }
+
+    .legend-border {
+        cursor: pointer;
+        stroke: rgb(219,219,219);
+        fill: rgb(219,219,219);
+    }
+
+    .legend-border.active {
+        stroke: rgb(240,240,240);
+        fill: rgb(240,240,240);
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+
+    .key_curve {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 1px;
+    }
+
+    .price_context {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 1px;
+    }
+
+    .curve.actual {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 1px;
+    }
+
+    .curve.yield {
+        fill: none;
+        stroke: fill;
+        stroke-width: 1px;
+    }
+
+    .curve.predicted {
+        fill: none;
+        stroke-opacity: 1;
+        stroke-width: 1px;
+        stroke-dasharray: 5, 10;
+    }
+
+    .risk_area {
+        fill: steelblue;
+        fill-opacity: 0.25;
+        /*fill: rgba(230, 230, 255, 0.8);*/
+        /*stroke: rgba(216, 216, 255, 0.8);*/
+    }
+
+    .curve.bound {
+        fill: none;
+        stroke: red;
+        stroke-opacity: 0.3;
+        stroke-width: 1px;
+    }
+
+    .curve:hover {
+        stroke-width: 3px;
+        stroke-opacity: 1;
+    }
+
+    .text_pointer {
+        cursor: pointer;
+    }
+
+    .news-label {
+        stroke-width: 2px;
+        stroke: gray;
+    }
+
+    .subline {
+        stroke-dasharray: 2, 10;
+        stroke: gray;
+    }
+
+    .tickline {
+        stroke-dasharray: 5, 5;
+        stroke: gray;
+    }
+
+    .mark {
+        stroke: #fff;
+        fill-opacity: .125;
+        shape-rendering: crispEdges;
+    }
+    .mark-none {
+        fill-opacity: 0;
+        stroke: none;
+    }
+
+    button.btn_keyword {
+        width: 50px;
+    }
+
+    #hint {
+        position: absolute;
+        z-index: 999;
+        display: none;
+        background-color: black;
+        color: white;
+        /*border: 1px ;*/
+    }
+
+    #select_doubleSpectrum, #select_spectrum {
+        margin-bottom: 5px;
+    }
+
+    .option_label {
+        cursor: pointer;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #div_double_option {
+        height: 18px;
+    }
+
+    #btn_double {
+        margin-top: 2px;
+        width: 14px;
+        height:14px;
+        float: left;
+    }
+
+    .double_hr {
+        margin-top: 9px;
+        float: left;
+        width: 40px;
+    }
+
+    .overview_period_point, .period {
+        cursor: pointer;
+    }
+
+    #xAxis_double {
+        cursor: n-resize;
+    }
+
+    .curveLegendSVG {
+        stroke: gray;
+        fill: gray;
+    }
+
+    #drag_svg {
+        cursor: n-resize;
+    }
+
+    .font text {
+        font-size: 15px;
+    }
+
+    .axis text {
+        font-size: 15px;
+    }
+    
+    .tips text {
+        font-size: 15px;
+    }
+
+</style>
+<link rel="stylesheet" href="css/colorbrewer.css">
+<link rel="stylesheet" href="css/jquery.range.css">
+<link rel="stylesheet" href="css/bootstrap-slider.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+<body>
+
+<div id="div_title">    <!-- TOP -->
+    <div id="margin_title"></div>
+    <div id="title">Visual Interpretation of Text-based Deep Stock Prediction - </div><div id="div_data_source"></div>
+    <!--<div id="title">Visual Interpretation of Text-based Deep Stock Prediction - </div><div id="div_data_source"></div>-->
+    <span id="select_stock">Stock Index: <select id="symbol"></select></span>
+</div>
+
+<div id="middle">
+<div id="detail">
+    <div id="factor">
+        <div id="spinner_news_list"></div>
+        <div id="div_factor_title">
+            <span id="factor_title">Document List</span>
+        </div>
+        <div id="div_news"></div>
+    </div>
+
+    <div id="contour" class="canvas_div">
+        <div id="div_contour_title">
+            <span id="contour_title">Keyword Map</span>
+        </div>
+        <div id="spinner_contour"></div>
+        <div id="div_contour">
+            <svg id="svg_contour"></svg>
+        </div>
+    </div>
+</div>
+
+<div id="div_chart">
+
+    <div id="div_overview" class="div_chart">
+        <div class="control">
+            <!--ZOOM<br>-->
+            <div id="zoom">
+                <center>STOCK<br>
+                TIMELINE</center>
+                <!--<input id="btn_reset" type="image" src="img/reset.png">-->
+            </div>
+            <svg id="svg_overview_period"></svg>
+            <span id="calendar_start" class="period">2006/10/20</span><br>
+            <span id="calendar_end" class="period">2015/11/04</span>
+            <!--<button id="reset">Reset</button>-->
+        </div>
+        <!--<div id="div_zoom"></div>-->
+        <div id="div_context">
+            <svg id="svg_context"></svg>
+        </div>
+    </div>
+    <div id="div_stock" class="div_chart">
+        <div class="control">
+            <div class="title">
+                <center>
+                    Rise&Fall<br>
+                    Chart<br>
+                    <img src="img/histogram.png" width="56" height="30" >
+                </center>
+            </div>
+            <div id="doubleSpectrum" v-show="showDoubleSpectrum">
+                <div id="select_doubleSpectrum" class="div_radio">
+                    <div class="option" v-for="option in options">
+                        <label class="option_label">
+                            <input type="checkbox" name="select_doubleSpectrum" @change="changeStatus(option)" :checked="option.checked" v-model="option.checked">
+                            {{ option.text }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="select_spectrum" class="div_radio"></div>
+            <div id="div_double_option">
+                <hr class="double_hr">
+                <input id="btn_double" class="btn_keyword" type="image" src="img/add.png">
+                <hr class="double_hr">
+            </div>
+        </div>
+        <div id="canvas_chart" class="canvas_div">
+            <div id="div_price"><svg id="svg_price"></svg></div>
+            <!--<div id="div_x_price"><svg id="svg_x_price"></svg></div>-->
+        </div>
+    </div>
+    <div id="spinner_keyword_line"></div>
+    <div id="div_keyword_line" class="div_chart">
+        <div class="control">
+            <div class="title">
+                <center>
+                    FACTOR<br>
+                    HIERARCHY
+                </center>
+            </div>
+
+            <div class="control_title">Keyword POS: </div>
+            <div id="select_POS" class="div_radio"></div>
+            <!--<hr>-->
+            <div class="control_title">Sort by: <select id="select_sort"></select></div>
+            <!--<hr>-->
+            <div class="control_title">Add new:</div>
+            <div id="factorOption">
+                <input type="text" name="keyword" id="box_keyword" maxlength="20">
+                <input id="btn_add" class="btn_keyword" type="image" src="img/add.png">
+           </div>
+            <!--<hr>-->
+            <div class="control_title">Factor Hist.: <select id="select_histogram"></select></div>
+            <!--<hr>-->
+            <div class="control_title">Factor cor.: <select id="select_window"></select></div>
+            <!--<hr>-->
+            <div class="control_title">Shift: <select id="select_delay"></select></div>
+
+            <!--<div class="control_title">Filter: <select id="select_coherence"></select></div>-->
+            <!--<div class="control_title">Keyword: <select id="select_keyword"></select></div>-->
+            <!--<div class="control_title">Timeline: <select id="select_timeline"></select></div>-->
+            <!--<div class="control_title">Histogram </div>-->
+            <!--<div id="select_histogram" class="div_radio"></div>-->
+        </div>
+        <div id="div_init_keyword"></div>
+    </div>
+</div>
+</div>
+
+<script src="js/d3.v3.js"></script>
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/spin.js"></script>
+<script src="js/date_selecter.js"></script>
+<script src="js/marchingsquares-isobands.js"></script>
+<script src="js/d3-downloadable.js"></script>
+<script src="js/jquery.range.js"></script>
+<script src="js/bootstrap-slider.js"></script>
+<script src="js/vue.js"></script>
+<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+<script src="module/FactorDiv.js"></script>
+
+<script src="app/stocks_data.js"></script>
+<script src="app/common.js"></script>
+<script src="app/mySpinner.js"></script>
+<script src="app/config.js"></script>
+<script src="app/utils.js"></script>
+<script src="app/factors.js"></script>
+<script src="app/my_calendar.js"></script>
+<script src="app/data_source.js"></script>
+<script src="app/chart.js"></script>
+<script src="app/yield_curve.js"></script>
+<script src="app/chart_zoom.js"></script>
+<script src="app/factors_chart.js"></script>
+<script src="app/spectrum.js"></script>
+<script src="app/factor_spectrum.js"></script>
+<!--<script src="app/contour_map.js"></script>-->
+<script src="app/keywords_map.js"></script>
+<script src="app/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+load finished! 153.322403 s
+now deal: 1000
+Alrosa Board Approves Evraz Buying 51% of Timir Unit
+now deal: 2000
+Philippines Approves Tariffs on Alternative Energy Sources
+now deal: 3000
+Ruble Advances 0.2% to 30.5360 Against the U.S. Dollar in Early Trading
+now deal: 4000
+Traceback (most recent call last):
+  File "save_news_path_db.py", line 21, in <module>
+    print title
+UnicodeEncodeError: 'ascii' codec can't encode character u'\u2018' in position 21: ordinal not in range(128)
