@@ -7,9 +7,9 @@
 - 项目运行方法：
 	1. 后台启动python/tornado下的两个server.py服务
 	2. demo代码置于apache下，访问index.html即可
-	3. 具体内容见项目wiki。
+	3. 具体内容见[项目wiki](https://github.com/visdata/DeepClue/wiki)。
 
-- 项目结构（具体内容见项目wiki）：
+- 项目结构（具体内容见[项目wiki](https://github.com/visdata/DeepClue/wiki)）：
 	- demo：DeepClue可视化系统
 	- python：后台数据处理部分及提供API服务
 	- stockvis：预测模型
