@@ -13,3 +13,5 @@
 	- demo：DeepClue可视化系统
 	- python：后台数据处理部分及提供API服务
 	- stockvis：预测模型
+
+- 项目wiki[https://github.com/visdata/DeepClue/wiki]
