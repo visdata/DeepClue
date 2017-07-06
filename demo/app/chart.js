@@ -216,6 +216,14 @@ svg_price
     .on('touchstart.zoom', null);   //为了避免和brush冲突，将其解绑
 
 
+/**
+ *
+ 股价曲线视图的绘制
+ *
+ @param data 股价数组，数组中的每一项为一天的股价数据
+ @param which_price 对哪种股价进行绘制，目前均为收盘价
+ *
+ */
 function drawStock(data, which_price) {   //which_price:展示哪一个price（high、low…）
 
     if(arguments[2]) { //标记是否是画全部数据
@@ -309,11 +317,13 @@ function drawStock(data, which_price) {   //which_price:展示哪一个price（high、l
     spinner.spin();     //end spinner
 
     zoomPeriod(x_price.domain()[0], x_price.domain()[1], arguments[2]);
-    //addTips();
-    //if(mode_keywords) drawKeywordsFlow(news_keywords);
-    //else getSentimentNewsAndDraw();  //factor view
 }
 
+/**
+ *
+ 更新新闻标注的位置
+ *
+ */
 function updateNewsLabel() {
     svg_price_g.selectAll(".news-label").remove();
     svg_price_g.selectAll(".news-title").remove();
@@ -359,6 +369,12 @@ function updateNewsLabel() {
     });
 }
 
+/**
+ *
+ 在股价视图上添加选中新闻的标注label
+ *
+ @param news 被选中的新闻的信息，{date: , title: , x:, y: }分别标注新闻的日期、标题、横坐标和纵坐标
+ */
 function addNewsLabel(news) {
 
     svg_price_g.selectAll(".news-label").remove();
@@ -403,6 +419,12 @@ function addNewsLabel(news) {
     ;
 }
 
+/**
+ *
+ 在股价视图上添加时间辅助线
+ *
+ @param x 鼠标当前横坐标位置
+ */
 function addTimeLine(x) {
     removeTimeLine();
     removeAxisLabel();
@@ -497,6 +519,11 @@ function addTimeLine(x) {
         .text("   " + value_open);
 }
 
+/**
+ *
+ 删除所有时间辅助线
+ *
+ */
 function removeTimeLine() {
     d3.selectAll(".subline").remove();
     d3.selectAll(".tickline").remove();
@@ -504,6 +531,16 @@ function removeTimeLine() {
     d3.selectAll(".tip-node").remove();
 }
 
+/**
+ *
+ 在股价视图左侧y轴上添加当前股价数值label
+ *
+ @param x 鼠标横坐标
+ @param y 鼠标纵坐标
+ @param axis_label_width label的宽度
+ @param axis_label_height label的高度
+ @param text label的文本信息
+ */
 function addAxisLabel(x, y, axis_label_width, axis_label_height, text) {
     svg_price_g.append("rect")
         .attr("class", "axis_label")
@@ -529,11 +566,21 @@ function addAxisLabel(x, y, axis_label_width, axis_label_height, text) {
         });
 }
 
+/**
+ *
+ 删除y轴上的股价数值label
+ *
+ */
 function removeAxisLabel() {
     svg_price_g.selectAll(".axis_label")
         .remove();
 }
 
+/**
+ *
+ 在股价视图左侧添加当前日期的详细股价信息
+ *
+ */
 function addTips() {
     svg_price.selectAll(".tips").remove();
     var tips = svg_price
@@ -681,6 +728,12 @@ function addTips() {
 }
 
 //根据日历选择更改显示
+/**
+ *
+ start 当前选择的开始日期
+ end 当前选择的结束日期
+ *
+ */
 function zoomPeriod(start, end) {
     x_price.domain([start, end]);
     zoom.x(x_price);
@@ -690,6 +743,11 @@ function zoomPeriod(start, end) {
 var reDrawKeywordTimer = null;
 var filterNewsTimer = null;
 
+/**
+ *
+ 当区间选择改变时重新绘制股价图
+ *
+ */
 function zoomed() {
     svg_price_g.select(".tip-node").remove();
     svg_price_g.selectAll(".curve").remove();
@@ -886,7 +944,13 @@ function zoomed() {
     addTips();
 }
 
-
+/**
+ *
+ 对股价图的图注进行拖拽
+ deltaX 拖拽的横向偏移量
+ deltaY 拖拽的纵向偏移量
+ *
+ */
 function dragLegend(deltaX, deltaY) {
     d3.selectAll(".chartLegend")
         .attr('transform', function() {
@@ -899,7 +963,12 @@ function dragLegend(deltaX, deltaY) {
         });
 }
 
-//TODO: 改变y轴
+/**
+ *
+ 切换股价视图模式
+ type 股价模式 or 收益模式
+ *
+ */
 function changeChartType(type) {
     if(type_chart == type) {
         return; //如果没有变化就返回
@@ -919,6 +988,11 @@ function changeChartType(type) {
 
 var timer = null, WAIT_TIME = 2000;
 var last_start, last_end;
+/**
+ *
+ 时间画刷改变时的回调函数
+ *
+ */
 function brushed() {
     var extent = brush_price.empty() ? x_price.domain() : brush_price.extent();
     var start = addDate(extent[0], 'd', -1);
@@ -929,6 +1003,11 @@ function brushed() {
         .attr('width', 0);  //其他brush的宽度设为0，即去掉
 }
 
+/**
+ *
+ 绘制股价曲线
+ *
+ */
 function drawPriceCurve() {
     var model_name = model_names[which_model];
     var price_str =  prices[which_price];
@@ -1060,6 +1139,11 @@ function drawPriceCurve() {
         .text('stock price ($)');
 }
 
+/**
+ *
+ 总览股价视图中的时间画刷改变时的回调函数
+ *
+ */
 function context_brushed() {
     clearZoomSelection();
     var extent = brush_context.empty() ? x_context.domain() : brush_context.extent();
@@ -1078,12 +1162,26 @@ function context_brushed() {
     zoomPeriod(extent[0], extent[1]);
 }
 
+/**
+ *
+ 改变总览视图时间画刷的起止日期
+ start 区间开始日期
+ end 区间结束日期
+ *
+ */
 function change_context_brush(start, end) {
     clearZoomSelection();
     brush_context.extent([start, end]);
     d3.select(".x.brush_context").call(brush_context);
 }
 
+/**
+ *
+ 时间画刷两边的label
+ @param d 当前svg元素
+ @return 返回label的svg字符串
+ *
+ */
 function resizePath(d) {
     var e = +(d == "e"),
         x = e ? 1 : -1,

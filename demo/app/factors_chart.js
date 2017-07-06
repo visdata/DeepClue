@@ -60,6 +60,11 @@ $('#btn_add').click(function() {
     addNewKeywordDiv(keyword);
 });
 
+/**
+ *
+ * 显示或隐藏因素视图中的相关性曲线
+ *
+ */
 function showOrHiddenTimeline() {
     if(window_types[which_window] != 'none') {    //0:相关性，1：频率
         showCorrTimeline();
@@ -68,6 +73,11 @@ function showOrHiddenTimeline() {
     }
 }
 
+/**
+ *
+ * 显示因素视图中的相关性曲线
+ *
+ */
 function showCorrTimeline() {
     //show
     d3.selectAll('.keywordLine')
@@ -77,6 +87,11 @@ function showCorrTimeline() {
     //}
 }
 
+/**
+ *
+ * 隐藏因素视图中的相关性曲线
+ *
+ */
 function hiddenCorrTimeline() {
     //hidden
     d3.selectAll('.keywordLine')
@@ -85,6 +100,12 @@ function hiddenCorrTimeline() {
         .style('display', 'none');
 }
 
+/**
+ *
+ * 获取当前时间窗口大小下的时间单位大小
+ * @return 时间单位大小
+ *
+ */
 function getUnit() {
     var extent = x_price.domain();
     var start_year = extent[0].getFullYear(),
@@ -118,6 +139,11 @@ function getUnit() {
     return unit;
 }
 
+/**
+ *
+ * 绘制关键词因素视图
+ *
+ */
 function drawKeywordLines() {
     spinner_keyword_line.spin(target_keyword_line);
     clearInitKeywords();
@@ -172,6 +198,14 @@ function drawKeywordLines() {
     reDrawFactorDivs();
 }
 
+/**
+ *
+ * 绘制因素曲线
+ * @param factorDiv 要绘制的div
+ * @param unit 当前时间单位大小
+ * @param cacel_redraw 是否重绘
+ *
+ */
 function drawFactorLine(factorDiv, unit, cancel_redraw) {
 
     var div = d3.select(factorDiv.div);
@@ -400,6 +434,13 @@ function drawFactorLine(factorDiv, unit, cancel_redraw) {
     drawSpectrumKeywords(svg_keywordLine_g, factor_data, unit);
 }
 
+/**
+ *
+ * 因素视图框选时间画刷时更新文档视图的新闻展示
+ * @param factor_data 选中的因素，FactorDiv元素
+ * @extent 时间区间 {start：，end：}标记起止日期
+ *
+ */
 function brushNewsTable(factor_data, extent) {
     d3.selectAll('.brush_price')
         .select('.extent')
@@ -447,6 +488,12 @@ function brushNewsTable(factor_data, extent) {
     showNewsTable(tmp_news_list, keywords_show, extent[0], extent[1]);
 }
 
+/**
+ *
+ * 展开二元词组视图
+ * @param parameters 包含keyword、elem
+ *
+ */
 function expandBigram(parameters) {
     var list_bigram = bigram_info_of_keywords[parameters.keyword];
     var bigrams = list_bigram.slice(0, DEFAULT_EXPAND);
@@ -470,11 +517,22 @@ function expandBigram(parameters) {
     }
 }
 
+/**
+ *
+ * 删除一个因素视图
+ * @param factorDiv 要删除的因素，FactorDiv元素
+ *
+ */
 function deleteFactorDiv(factorDiv) {
     factorDiv.removeFromParent();
     reDrawFactorDivs();
 }
 
+/**
+ *
+ * 重新绘制因素视图
+ *
+ */
 function reDrawFactorDivs() {
     //先按照FactorDiv的树结构的顺序排列Div
     var all_new_keywordDiv = NEW_KEYWORD_ROOT.getAllChildArr();
@@ -515,6 +573,12 @@ function reDrawFactorDivs() {
 }
 
 //画展开线
+/**
+ *
+ * 画展开线
+ * @param factor_div FactorDiv格式，当前要画展开线的因素
+ *
+ */
 function drawExpandLine(factor_div) {
     //首先删除加载更多的按钮，以下一步添加用
     d3.select(factor_div.div)
@@ -634,6 +698,12 @@ function drawExpandLine(factor_div) {
 
 }
 
+/**
+ *
+ * 添加展开更多按钮
+ * @param factor_div 当前因素
+ *
+ */
 function addMoreBtn(factor_div) {
     var svg = d3.select(factor_div.div)
         .select('svg'); //选中当前的svg
@@ -667,6 +737,12 @@ function addMoreBtn(factor_div) {
         });
 }
 
+/**
+ *
+ * 展开更多子节点因素
+ * @param factor_div 当前因素
+ *
+ */
 function addMoreChildFactorDiv(factor_div) {
     d3.select(factor_div.div)
         .select('.btn_more').remove();
@@ -750,6 +826,12 @@ function addMoreChildFactorDiv(factor_div) {
     reDrawFactorDivs();
 }
 
+/**
+ *
+ * 添加新的关键词因素视图
+ * @param keyword 要添加的新的关键词
+ *
+ */
 function addNewKeywordDiv(keyword) {
     var keywordInfo = dict_keyword_data[keyword];
     if(!keywordInfo) {
@@ -774,10 +856,24 @@ function addNewKeywordDiv(keyword) {
     reDrawFactorDivs();
 }
 
+/**
+ *
+ * 将关键词因素视图移至第一个位置
+ * @param keyword 要移动的关键词
+ *
+ */
 function moveKeywordLineToFirst(keyword) {
      $('#keyword_line_' + keyword).insertBefore($('.div_keywordLine').first());
 }
 
+/**
+ *
+ * 画每天的关键词因素视图
+ * @param svg_keywordLine_g svg元素
+ * @param factor_data 因素数据
+ * @param unit 时间单位大小
+ *
+ */
 function drawKeywordLineEveryDay(svg_keywordLine_g, factor_data, unit) {
 
     var type = factor_data.type;
@@ -973,6 +1069,14 @@ function drawKeywordLineEveryDay(svg_keywordLine_g, factor_data, unit) {
         });
 }
 
+/**
+ *
+ * 对同一层次因素进行排序
+ * @param factor_div FactorDiv元素
+ * @param start 开始日期
+ * @param end 结束日期
+ *
+ */
 function sortAllLevelFactor(factor_div, start, end) {
     spinner_keyword_line.spin(target_keyword_line);
     var parentDiv = factor_div.parent;
@@ -1065,6 +1169,12 @@ function sortAllLevelFactor(factor_div, start, end) {
     reDrawFactorDivs();
 }
 
+/**
+ *
+ * 鼠标移出因素图的操作
+ * @param factor_div FactorDiv元素
+ *
+ */
 function mouseOutFactorChart(factorDiv) {
     var svg = d3.select(factorDiv.div)
         .select('.svg_keywordLine');
@@ -1075,6 +1185,12 @@ function mouseOutFactorChart(factorDiv) {
     clearFilterKeywordsNode();
 }
 
+/**
+ *
+ * 鼠标进入因素视图的回调函数
+ * @param factor_div FactorDiv元素
+ *
+ */
 function mouseOverFactorChart(factorDiv) {
     var svg = d3.select(factorDiv.div)
         .select('.svg_keywordLine');
@@ -1102,6 +1218,10 @@ function mouseOverFactorChart(factorDiv) {
     }
 }
 
+/**
+ *
+ * 清除所有因素的时间刷
+ */
 function clearAllKeywordBrush() {
     d3.selectAll('.brush_keyword')
         .each(function(dd, ii) {
@@ -1111,11 +1231,25 @@ function clearAllKeywordBrush() {
         });
 }
 
+/**
+ *
+ * 清空初始化因素视图
+ *
+ */
 function clearInitKeywords() {
     div_init_keyword.selectAll('div').remove();
     div_init_keyword.selectAll('svg').remove();
 }
 
+/**
+ *
+ * 计算因素相关性与股价之间的相关性
+ * @param factor 因素
+ * @param type 类型，分为GROUP、BIGRAM和KEYWORD
+ * @param start 开始日期
+ * @param unit 计算的时间单元大小
+ *
+ */
 function getUnitPeriodCrossCorrelation(factor, type, start, unit) {
 
     var start_date = parseDate(start);
@@ -1125,80 +1259,16 @@ function getUnitPeriodCrossCorrelation(factor, type, start, unit) {
     return getPeriodCrossCorrelationKeywordPrediction(factor, type, start_date, end_date, unit);
 }
 
-function getPeriodCrossCorrelation(factor, start_date, end_date, unit) {
-
-    //按指数衰减确定每一天的比重:w=exp(-at)
-    //确定参数a：根据半衰期的大小确定a，例如exp(-at)=1/2,t为半衰期，则a=log2/t,log2=0.693
-    //当unit是一年的时候,半衰期是30天，则a=log2/30=0.0231
-    //当unit是月的时候，半衰期是7天，则a=log2/7=0.1
-    //当unit是周的时候，半衰期是1天，则a=log2/1=0.693
-    var a = 0.0231;
-    if(unit == 'y') {
-        a = 0.0231;
-    } else if(unit == 'm') {
-        a = 0.1;
-    } else if(unit == 'w') {
-        a = 0.693;
-    }
-
-    var keyword_arr = [], stocks_arr = []; //分别保存关键字和股价的数组，然后利用公式求相关度
-    var format = d3.time.format('%Y-%m-%d');
-    for(; start_date<end_date; start_date=addDate(start_date, 'd', 1)) {
-        var date = format(start_date);
-        if(dict_keyword_data[keyword][date] && dict_stocks_data[date]) {
-            keyword_arr.push(dict_keyword_data[keyword][date][0]);
-
-            //TODO:下面是根据用户选择，计算与（实际值、预测值或risk）的相关度
-            var price;
-            if(correlation_types[which_correlation] == 'actual') {
-                price = dict_stocks_data[date]['close'];
-            } else if(correlation_types[which_correlation] == 'prediction') {
-                var model_name = model_names[which_model];
-                price = dict_stocks_data[date]['pred_close_'+model_name];
-            } else if(correlation_types[which_correlation] == 'risk') {
-                price = dict_stocks_data[date]['risk'];
-            }
-            stocks_arr.push(price);
-        }
-    }
-
-    var mean_keyword = d3.mean(keyword_arr);
-    var mean_stocks = d3.mean(stocks_arr);
-    var deviation_keyword = 0;
-    var deviation_stocks = 0;
-
-    var cross_covariance;
-    if(unit) {  //如果是按段计算的画，使用改进后的相关性公式计算
-        var sum = 0;
-        var all_weight = 0;
-        for (var idx in keyword_arr) {
-            var t = keyword_arr.length-1-idx;
-            var weight = Math.exp(-a*t);
-            sum += weight*(keyword_arr[idx] - mean_keyword) * (stocks_arr[idx] - mean_stocks);
-            deviation_keyword += weight*Math.pow(keyword_arr[idx] - mean_keyword, 2);
-            deviation_stocks += weight*Math.pow(stocks_arr[idx] - mean_stocks, 2);
-            all_weight += weight;
-        }
-        cross_covariance = sum / all_weight;
-        deviation_keyword = Math.sqrt(deviation_keyword/all_weight);
-        deviation_stocks = Math.sqrt(deviation_stocks/all_weight);
-    } else {
-        var sum = 0;
-        for (var idx in keyword_arr) {
-            sum += (keyword_arr[idx] - mean_keyword) * (stocks_arr[idx] - mean_stocks);
-        }
-        cross_covariance = sum / keyword_arr.length;
-        deviation_keyword = d3.deviation(keyword_arr);
-        deviation_stocks = d3.deviation(stocks_arr);
-    }
-    var cross_correlation = cross_covariance / (deviation_keyword * deviation_stocks);
-    if (isNaN(cross_correlation)) {
-        cross_correlation = 0;
-    }
-    return cross_correlation;
-}
-
-//得到关键词的预测值与股价图显示的相关度
+/**
+ *
+ * 计算因素相关性与股价之间的相关性
+ * @param factor 因素
+ * @param type 类型，分为GROUP、BIGRAM和KEYWORD
+ * @param start_date 开始日期
+ * @param end_date 结束日期
+ * @param unit 计算的时间单元大小
+ *
+ */
 function getPeriodCrossCorrelationKeywordPrediction(factor, type, start_date, end_date, unit) {
 
     var dict_factor_data;
@@ -1290,72 +1360,3 @@ function getPeriodCrossCorrelationKeywordPrediction(factor, type, start_date, en
     }
     return cross_correlation;
 }
-
-function isNext(date1, date2, unit) {
-    var interval = 'd';
-    if(unit == 'day') {
-        interval = 'd';
-    } else if(unit == 'week') {
-        interval = 'w';
-    } else if(unit == 'month') {
-        interval = 'm';
-    }
-    var format = d3.time.format("%Y-%m-%d");
-    var next = addDate(new Date(date1), interval, 1);
-    return format(next) == format(date2);
-}
-
-function prevOrNext(date, unit, flag) { //flag=-1:prev, flag=1:next
-    var prev = new Date(date);
-    var interval = 'd';
-    if(unit == 'day') {
-        interval = 'd';
-    } else if(unit == 'week') {
-        interval = 'w';
-    } else if(unit == 'month') {
-        interval = 'm';
-    }
-    return addDate(prev, interval, flag);
-}
-
-
-/*
-** 下面是实现div拖放操作
- */
-function allowDrop(ev)
-{
-    ev.preventDefault();
-}
-
-var srcdiv = null;
-function drag(ev, divdom)
-{
-    srcdiv=divdom;
-    ev.dataTransfer.setData("text/html",divdom.innerHTML);
-}
-
-function drop(ev, divdom)
-{
-    ev.preventDefault();
-    if(srcdiv != divdom){
-        alert('change!');
-        srcdiv.innerHTML = divdom.innerHTML;
-        divdom.innerHTML=ev.dataTransfer.getData("text/html");
-    }
-}
-
-function addAxisLabel() {
-    d3.select('.svg_keywordLine')
-        .selectAll('.svg_g')
-        .each(function (d, i) {
-            if(i == 0) {
-
-            }
-        });
-}
-
-//function keyword_brushed(keyword) {
-//    alert(keyword);
-//    var extent = brush_keyword.empty() ? x_price.domain() : brush_keyword.extent();
-//    showNewsTable(keywords_news_by_date, 'share', extent[0], extent[1]);
-//}

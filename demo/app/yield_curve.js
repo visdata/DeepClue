@@ -16,6 +16,9 @@ var line_yield = d3.svg.line()
         //return y_yield(d.value);
     });
 
+/*
+* 画收益曲线视图
+ *///
 function drawYieldCurve() {
     var yield_data = [];
     var model_name = model_names[which_model];

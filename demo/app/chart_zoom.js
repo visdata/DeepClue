@@ -113,6 +113,12 @@ var calendar_start = d3.select('#calendar_start');
 var calendar_end = d3.select('#calendar_end');
 $('#btn_reset').click(clearPeriodSelection);
 
+/**
+ *
+ 改变区间长度的选择
+ option 当前选中的类型：all、1y……
+ *
+ */
 function changeZoomOption(option) {
     brush_context.extent([0, 0]);
     d3.select(".x.brush_context").call(brush_context);
@@ -139,117 +145,13 @@ function changeZoomOption(option) {
 
 }
 
+/**
+ *
+ 取消时间窗口选择
+ *
+ */
 function clearZoomSelection() {
     svg_context_zoom_g
         .selectAll('.zoom_option')
         .attr('fill', 'gray');
 }
-
-function testAnimatedTimeline(speed) {
-    var start_day = first_day;
-
-    setInterval(function() {
-        var year = start_day.getFullYear();
-        var month = start_day.getMonth();
-        var day = start_day.getDate();
-        var end = new Date(year, month, day);
-        addDate(end, 'm', 3);
-        var end_day = parseDate(end.getFullYear()+"-"+(end.getMonth()+1)+"-"+end.getDate());
-
-        zoomPeriod(start_day, end_day);
-
-        year = start_day.getFullYear();
-        month = start_day.getMonth();
-        day = start_day.getDate();
-        var start = new Date(year, month, day);
-        addDate(start, 'd', 1);
-
-        start_day = parseDate(start.getFullYear()+"-"+(start.getMonth()+1)+"-"+start.getDate());
-
-    }, speed);
-}
-
-//var div_zoom = d3.select("#div_zoom");
-//var start_x=tranlate_x+10;
-//var svg_zoom = div_zoom.append('svg')
-//    .attr('id', 'svg_zoom');
-//
-////添加圆圈
-//svg_zoom
-//    .selectAll('.show_circle')  //显示出来的点
-//    .data(zoom_options)
-//    .enter()
-//    .append('circle')
-//    .attr('class', function(d, i) {
-//        return 'zoom_option option'+i;
-//    })
-//    .attr('r', 3)
-//    .attr('cx', function(d, i) {
-//        return start_x+margin_zoom_x*i;
-//    })
-//    .attr('cy', 5)
-//    .attr('fill', 'gray');
-//svg_zoom
-//    .selectAll('.hide_cicle')   //不显示，只用来让用户更好的选择该点
-//    .data(zoom_options)
-//    .enter()
-//    .append('circle')
-//    .attr('class', function(d, i) {
-//        return 'zoom_option';
-//    })
-//    .attr('r', 5)
-//    .attr('cx', function(d, i) {
-//        return start_x-2+margin_zoom_x*i;
-//    })
-//    .attr('cy', 3)
-//    .attr('fill-opacity', 0);
-//
-////添加文字
-//svg_zoom
-//    .selectAll('.option')
-//    .data(zoom_options)
-//    .enter()
-//    .append('text')
-//    .attr('class', function(d, i) {
-//        return 'zoom_option option'+i;
-//    })
-//    .attr('x', function(d, i) {
-//        return start_x-8+margin_zoom_x*i;
-//    })
-//    .attr('y', 20)
-//    .attr('fill', 'gray')
-//    .text(function(d, i) {
-//        return d;
-//    });
-//
-////添加虚线
-//svg_zoom.selectAll('path')
-//    .data(zoom_options)
-//    .enter()
-//    .append('path')
-//    .attr('stroke', 'gray')
-//    .attr('stroke-dasharray', '4 4')
-//    .attr('d', function(d, i) {
-//        var s_x = start_x+5+margin_zoom_x*i,
-//            s_y = 5,
-//            e_x = start_x-2+margin_zoom_x*(i+1),
-//            e_y = s_y;
-//        if(i == zoom_options.length-1) {    //最后一个不需要虚线
-//            d3.select(this)
-//                .attr('stroke', 'none');
-//        }
-//        var line = 'M'+s_x+' '+s_y+' L'+e_x+' '+e_y;
-//        return line;
-//    });
-//
-//svg_zoom.selectAll('.zoom_option')
-//    .on('click', function(d, i) {
-//        i = i%zoom_options.length;  //0~5,6~10
-//        changeZoomOption(zoom_options[i]);
-//        clearZoomSelection();
-//        svg_zoom
-//            .selectAll('.option'+i)
-//            .attr('fill', 'red');
-//    });
-
-//})();

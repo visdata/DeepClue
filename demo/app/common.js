@@ -7,22 +7,33 @@ var drag_text = d3.behavior.drag()
     .on('drag', textDragMove)
     .on('dragend', textDragEnd);
 
-function textDragStart(d) {
+/**
+ *
+ 拖拽动作的开始事件监听
+ *
+ */
+function textDragStart() {
     svg_contour
-        //.call(zoomListener)
         .on("mousedown.zoom", null); //暂时解绑
-        //.on("touchstart.zoom", null)
-        //.on("touchmove.zoom", null)
-        //.on("touchend.zoom", null);
 }
 
-function textDragMove(d) {
+/**
+ *
+ 拖拽动作的事件监听
+ *
+ */
+function textDragMove() {
     d3.select(this)
         .attr('x', d3.event.x)
         .attr('y', d3.event.y);
 }
 
-function textDragEnd(d) {
+/**
+ *
+ 拖拽动作的结束事件监听
+ *
+ */
+function textDragEnd() {
     svg_contour
         .call(zoomListener);    //重新绑定zoom事件
 

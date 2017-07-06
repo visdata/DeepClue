@@ -97,16 +97,12 @@ d3.select('#div_keyword')
         //sortNewsList(0);
     });
 
-function removeCandidate() {
-    d3.select('#div_add_keyword')
-        .selectAll('.keyword')
-        .each(function (d, i) {
-            if(i < 3) {
-                d3.select(this).remove();
-            }
-        });
-}
-
+/**
+ *
+ 添加候选词
+ @param keyword 要添加的候选词
+ *
+ */
 function addCandidate(keyword) {
     var add_elem = d3.select('#div_add_keyword')
         .append('div')
@@ -144,6 +140,12 @@ function addCandidate(keyword) {
         });
 }
 
+/**
+ *
+ 添加关键词
+ @param keyword 要添加的关键词
+ *
+ */
 function addKeyword(keyword) {
     clearKeywordHighlight();
     if($.inArray(keyword, all_keywords) >= 0) { //在数组中
@@ -203,6 +205,11 @@ function addKeyword(keyword) {
         adjustKeywordHeight();
 }
 
+/**
+ *
+ 清除所有关键词高亮显示
+ *
+ */
 function clearKeywordHighlight() {
     clearFilter();  //contour map
     d3.selectAll('.keyword_label')
@@ -211,72 +218,11 @@ function clearKeywordHighlight() {
         });
 }
 
-//function showRecommendKeywords() {
-//    $('#factorOption').show();
-//
-//    spinner_keyword.spin(target_keyword);
-//    spinner_keyword_line.spin(target_keyword_line);
-//    var domain = x_price.domain();
-//    var format = d3.time.format('%Y-%m-%d');
-//    var start_date = format(domain[0]);
-//    var end_date = format(domain[1]);
-//
-//    var url = "http://"+SERVER+":"+KEYWORD_PORT+"/getRecommendKeywords?symbol="+companies[which_stock]["symbol"]+'&start_date='+start_date+'&end_date='+end_date+'&count=48';
-//    if(arguments.length == 0) {
-//        url += '&method=model'; //根据关键词模型得到的关键词
-//    } else {
-//        url += '&method=tf';    //根据词频得到的关键词
-//    }
-//    //默认source是news
-//    if(which_model == 1) {
-//        url += '&source=twitter';
-//    } else if(which_model == 2) {
-//        url += '&source=report';
-//    }
-//    var random = Math.random();
-//    url += '&id='+random;
-//    if(request_keyword_recommend != null) {
-//        request_keyword_recommend.abort();
-//    }
-//    console.log("keywords api url: " + url);
-//    request_keyword_recommend = $.ajax({
-//        url: url,
-//        context: document.body,
-//        //async: false,
-//        async: true,  //异步
-//        success: function(data){
-//            clearFactorList();
-//            var keywords = eval("("+data+")");
-//            //spinner_factor.spin();     //end spinner
-//            console.log(keywords);
-//            json_keywords = keywords;
-//            for(var i in keyword_types) {
-//                for(var j in json_keywords[keyword_types[i]]) {
-//                    var obj = json_keywords[keyword_types[i]][j];
-//                    if(map_keyword_attr[obj.keyword] == undefined) {
-//                        map_keyword_attr[obj.keyword] = {};
-//                    } else {
-//                        //console.log('exists!');
-//                        continue;
-//                    }
-//                    map_keyword_attr[obj.keyword]['frequency'] = obj.count;
-//                    map_keyword_attr[obj.keyword]['weight'] = obj.weight;
-//                    map_keyword_attr[obj.keyword]['normalize'] = obj.weight/(obj.count);
-//                }
-//            }
-//            spinner_keyword.spin();
-//            showKeywords();
-//            ////初始就默认显示，因此调用下面的鼠标点击事件方法
-//            //getKeywordInfo(selected_keywords);
-//        },
-//        error: function(error) {
-//            alert("keywords error!");
-//            console.log(error);
-//            //spinner_factor.spin();
-//        }
-//    });
-//}
-
+/**
+ *
+ 显示所有推荐的关键词
+ *
+ */
 function showKeywords() {
 
     var keywords = json_keywords[keyword_types[which_keyword_type]].slice(0, keywords_count);
@@ -385,6 +331,11 @@ function showKeywords() {
     adjustKeywordHeight();
 }
 
+/**
+ *
+ 获取所有新闻标题并显示
+ *
+ */
 function getAllTitlesAndShow() {
     var source = 'news';
     if(which_model == 1) {
@@ -398,11 +349,6 @@ function getAllTitlesAndShow() {
 
     var url = "http://"+SERVER+":"+LIST_NEWS_PORT+"/getPeriodNewsList?source="+source+"&symbol="+companies[which_stock]["symbol"]+"&start_date="+start_date+'&end_date='+end_date;
     var random = Math.random();
-    //TODO:在后台处理稳定之后，去掉url中的随机数，让缓存加快速度
-    //if(which_model != 0) {  //如果是news的话则可以缓存，加快速度
-    //    url += '&id='+random;   //加随机数是为了让url每次不一致，避免浏览器缓存
-    //}
-
     console.log(url);
 
     if(request_list_news != null) {
@@ -439,52 +385,12 @@ function getAllTitlesAndShow() {
     });
 }
 
-//得到关键词的bigram信息
-function getBigramInfo(keywords_count) {
-    var source = 'news';
-    if(which_model == 1) {
-        source = 'twitter';
-    }
-    var url = "http://"+SERVER+":"+KEYWORD_PORT+"/getRecommendKeywords?source="+source+"&symbol="+companies[which_stock]["symbol"]+"&mode=keyword_bigram";
-    var random = Math.random();
-    //url += '&id='+random;
-    console.log(url);
-    var keywords = "";
-    keywords_count = keywords_count.slice(0, 20);   //TODO:只显示前20个词，不然太慢
-    for(var i in keywords_count) {
-        keywords += keywords_count[i].keyword+" ";
-    }
-    url += '&keyword='+keywords;
-    console.log(keywords);
-    $.ajax({
-        url: url,
-        context: document.body,
-        //type: 'post',
-        //data: keywords,
-        //async: false,
-        async: true,  //异步
-        success: function(data){
-            var bigramInfo = eval("("+data+")");
-            //spinner_factor.spin();     //end spinner
-            console.log(bigramInfo);
-            for(var keyword in bigramInfo) {
-                bigram_info_of_keywords[keyword] = bigramInfo[keyword];
-            }
-            dict_bigram_data = getBigramDataByDay();
-        },
-        error: function(error) {
-            if(error.statusText == 'abort') {
-                //alert('abort!');
-            } else {
-                alert("bigram info error: " + error.statusText);
-            }
-            console.log(error);
-            //spinner_factor.spin();
-        }
-    });
-}
-
 //得到某个关键词的bigram信息
+/**
+ *
+ @param parameters {keyword：}，要查询的关键词信息
+ *
+ */
 function getKeywordBigramInfo(parameters) {
     var source = 'news';
     if(which_model == 1) {
@@ -524,10 +430,6 @@ function getKeywordBigramInfo(parameters) {
     });
 }
 
-//得到所有关键词的新闻列表
-function getKeywordInfo(keywords) {
-    return; //TODO:暂时去掉
-}
 
 //得到一段时间内的关键词聚类
 function getKeywordGroupInfo() {
@@ -609,7 +511,15 @@ function getKeywordGroupInfo() {
     });
 }
 
-function filterNewsTable(start, end, keyword, type) {
+/**
+ *
+ * 对文档列表视图进行过滤显示
+ @param start 开始日期
+ @param end 结束日期
+ @param keyword 过滤的关键词
+ *
+ */
+function filterNewsTable(start, end, keyword) {
     if(keyword) {   //框选之后对新闻进行筛选
 
     } else {
@@ -625,6 +535,11 @@ function filterNewsTable(start, end, keyword, type) {
     }
 }
 
+/**
+ *
+ * 对文档列表添加噢排序选项
+ *
+ */
 function addSortOption() {
     var div_news = d3.select('#div_news');
     div_news.select('#div_sort').remove();
@@ -644,7 +559,7 @@ function addSortOption() {
 }
 
 //每次根据传进来的newsList进行显示，前两百条（或者传进来之前截取前200条）
-//keyword是选中用来高亮的
+//keywords是选中用来高亮的
 //start和end是标注选中的关键词的时间区间
 function showNewsTable(newsList, keywords, start, end) {
 
@@ -837,6 +752,11 @@ function showNewsTable(newsList, keywords, start, end) {
         });
 }
 
+/**
+ *
+ * 对所选新闻进行排序
+ *
+ */
 function sortSelectedNews() {
     switch(sortType) {
         case DATE_RISE:
@@ -870,6 +790,11 @@ function sortSelectedNews() {
     }
 }
 
+/**
+ *
+ * 在文档列表中点击查看正文
+ *
+ */
 function seeDetail(news) {
     var date = news.date;
     var title = news.title;
@@ -890,6 +815,12 @@ function seeDetail(news) {
     //    window.open("newsDetail.html?news_id="+news_id, "new_window","height=300,width=400,left="+left+",top="+top);
 }
 
+/**
+ *
+ * 对文档列表进行排序
+ * i 排序方式，0为按时间排序，1为按权重排序
+ *
+ * */
 function sortSelectedNewsList(i) {
     switch(i) {
         case 0:
@@ -936,6 +867,12 @@ function sortSelectedNewsList(i) {
         selected_start_date, selected_end_date);
 }
 
+/**
+ *
+ * 改变文档视图的高度，全屏or半屏
+ * larger 要改变的状态
+ *
+ */
 function changeNewsListHeight(larger) {
     newsListIsLarger = larger;  //改变状态
     if(larger) {    //变高
@@ -963,54 +900,4 @@ function changeNewsListHeight(larger) {
         d3.select('#news_list')
             .style('height', height_factor-height_factor_title-55+'px');
     }
-}
-
-//只有在多选状态下才会调用该方法
-function addSearchWord(keyword) {  //添加成功返回true
-    var flag = true;
-    var words = [];
-    for(var i in selected_keywords_arr) {
-        if(selected_keywords_arr[i] == keyword) {
-            flag = false;
-            continue;
-        }
-        words.push(selected_keywords_arr[i]);
-    }
-    if(flag) {
-        words.push(keyword);
-    }
-    selected_keywords_arr = [];
-    selected_keywords = "";
-    for(var i in words) {
-        selected_keywords_arr.push(words[i]);
-        selected_keywords += words[i]+' ';
-    }
-    return flag;
-}
-
-
-function removeSearchWord(keyword) {  //删除关键词
-    all_keywords.splice($.inArray(keyword, all_keywords), 1);
-    selected_keywords_arr.splice($.inArray(keyword, selected_keywords_arr), 1);
-    selected_keywords = "";
-    for(var i in selected_keywords_arr) {
-        selected_keywords += selected_keywords_arr[i]+' ';
-    }
-    adjustKeywordHeight();
-}
-
-function clearKeywordSelection() {
-    selected_keywords_arr.length = 0;
-    selected_keywords = "";
-}
-
-function adjustKeywordHeight() {
-    $('#div_keyword')
-            .height(Math.ceil(all_keywords.length/3)*20+50+'px');
-}
-
-function clearFactorList() {
-    //在展示新的关键词之前首先清空之前的所有状态
-    div_factor.select('#div_list').remove();
-    clearKeywordSelection();
 }

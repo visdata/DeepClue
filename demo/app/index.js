@@ -108,7 +108,9 @@ var list_selected_keywords, selected_start_date, selected_end_date;
 var map_news_id_idx = {};    //保存所有title中的id与index的映射关系，以便筛选每个关键词的title
 
 //创建d3元素
-
+/*
+加载S&P500数据并进行初始化
+ */
 d3.json("data/SP500_info.json", function(error, data) {
     data = eval('(' + data + ')');
     for (var i=0; i<data.length; i++) {
@@ -358,6 +360,14 @@ d3.json("data/SP500_info.json", function(error, data) {
     visualize(which_stock, which_price);
 });
 
+
+/**
+ *
+ 可视化的入口函数
+ *
+ @param which_stock 哪一个公司，为整数类型，在公司数组里的下标
+ @param which_price 哪种股价，目前只有收盘价
+ */
 function visualize(which_stock, which_price) { //visualize(names, i, price)
 
     stock_info_by_date = {};
@@ -603,6 +613,14 @@ function visualize(which_stock, which_price) { //visualize(names, i, price)
     });
 }
 
+/**
+ *
+ 在指定div上添加复选框的选项
+ *
+ @param div_id div的id
+ @param options 复选框的选项数组
+ @param selected 标记复选框中哪些选项被选中
+ */
 function addCheckBoxOptionDiv(div_id, options, selected) {
     var div_options = d3.select('#'+div_id)
         .selectAll('.option')
@@ -639,6 +657,14 @@ function addCheckBoxOptionDiv(div_id, options, selected) {
         });
 }
 
+/**
+ *
+ 在指定div上添加复选框或单选框的选项
+ *
+ @param div_id div的id
+ @param options 选项数组
+ @param type 标记是复选框还是单选框
+ */
 function addOptionOnDiv(div_id, options, type) {
     var div_options = d3.select('#'+div_id)
         .selectAll('.option')
@@ -674,7 +700,14 @@ function addOptionOnDiv(div_id, options, type) {
         });
 }
 
-function changeOption(div_id, index, type) {
+/**
+ *
+ 改变选项时的回调函数
+ *
+ @param div_id div的id
+ @param index 被选中的选项
+ */
+function changeOption(div_id, index) {
     var which = div_id.split('_')[1];
     if(which == 'spectrum') {
         which_spectrum = index;
@@ -700,6 +733,12 @@ function changeOption(div_id, index, type) {
     }
 }
 
+/**
+ *
+ 下拉框选项改变时的回调函数，根据选项进行相应操作
+ *
+ @param e 事件，由js提供
+ */
 function changeBox(e) {
     removeTimeLine();
     var args = e.value.split("#");

@@ -17,6 +17,11 @@ var MDS = 0, TSNE = 1;
 var PROJECTION=MDS;
 
 var tx=0, ty= 0, ss=1;
+/**
+ *
+ * 监听关键词映射视图的zoom操作
+ *
+ */
 function zoomHandler() {
     tx = d3.event.translate[0];
     ty = d3.event.translate[1];
@@ -25,6 +30,12 @@ function zoomHandler() {
     updateEmbedding();
 }
 
+/**
+ *
+ * 关键词映射视图zoom的放大缩小按钮的监听
+ * @param i 缩放类型，0为放大，1为缩小
+ *
+ */
 function clickToZoom(i) {
     if(i==0) {
         ss *= 1.148;
@@ -56,6 +67,11 @@ var positions; // tsne result stored here
 
 var RADIUS = 2, RADIUS_BIGGER = 3;
 
+/**
+ *
+ * 初始化关键词映射视图数据并绘制
+ *
+ */
 function initKeywordMap() {
     keywordsList = groups_sort_and_keyword_position['keywordMapList'];
     pos_tSNE = groups_sort_and_keyword_position['pos_tSNE'];
@@ -108,6 +124,11 @@ function initKeywordMap() {
 }
 
 var groups, nodes, nodes2;
+/**
+ *
+ * 绘制关键词映射视图
+ *
+ */
 function drawKeywordMap() {
 
     spinner_contour.spin();
@@ -347,6 +368,11 @@ function drawKeywordMap() {
     updateEmbedding();
 }
 
+/**
+ *
+ * 更新节点坐标
+ *
+ */
 function updateEmbedding() {
     // move the groups accordingly
     groups.attr("transform", function(d, i) { return "translate(" +
@@ -355,6 +381,12 @@ function updateEmbedding() {
 
 }
 
+/**
+ *
+ * 根据选中的关键词数据对视图进行过滤
+ * @param keywords 在因素视图中选中的关键词数组
+ *
+ */
 function filterKeywordsNode(keywords) {
     svg_contour.selectAll('.map_node')
         .attr("fill-opacity", 0.1);
@@ -373,6 +405,11 @@ function filterKeywordsNode(keywords) {
     }
 }
 
+/**
+ *
+ * 清空关键词映射视图的高亮显示
+ *
+ */
 function clearFilterKeywordsNode() {
     svg_contour.selectAll('.map_node')
         .attr("fill-opacity", function(d, i) {
@@ -383,6 +420,13 @@ function clearFilterKeywordsNode() {
         .attr("opacity", 1);
 }
 
+/**
+ *
+ * 获取关键词节点的半径大小
+ * @param keyword 关键词
+ * @return 节点半径
+ *
+ */
 function getKeywordRadius(keyword) {
     if(keywordsInFirstFlag[keyword]) {
         return RADIUS_BIGGER;
@@ -390,6 +434,13 @@ function getKeywordRadius(keyword) {
     return RADIUS;
 }
 
+/**
+ *
+ * 根据权重返回关键词透明度
+ * @param weight 关键词的权重
+ * @return 透明度
+ *
+ */
 function getKeywordOpacity(weight) {
     return 1;   //改为不按weight改变透明度，都设为1
     //根据预测值大小设置为0.1~1
@@ -398,14 +449,33 @@ function getKeywordOpacity(weight) {
     //return opacity;
 }
 
+/**
+ *
+ * 判断关键词是否为中性词
+ * @param keyword 关键词
+ * @return true 是中性词
+ *
+ */
 function isNEU(keyword) {
     return keyword=='#NEU';
 }
 
+/**
+ *
+ * 删除字符串中的特殊字符
+ * @param str 字符串
+ * @return 删除特殊字符后的字符串
+ */
 function removeSpecialChar(str) {
     return str.replace(/[&\|\\\*^%$.'"#@\+\-]/g,'');
 }
 
+/**
+ *
+ * 按照map大小对positions位置进行重定位
+ * @param postions 记录每个节点横纵坐标的数组
+ *
+ */
 function reProject(positions) {
     //按照map大小对positions位置进行重定位
     var max_x= 0, max_y = 0;

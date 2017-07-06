@@ -9,6 +9,14 @@ var y_right_weight  = d3.scale.linear();
 var yAxis_right_weight = d3.svg.axis().scale(y_right_weight).orient("right");
 var yAxis_right_frequency = d3.svg.axis().scale(y_right_frequency).orient("right");
 
+/**
+ *
+ 画关键词因素的色谱图
+ svg_g 绘制的svg元素
+ factor_data 因素数据，FactorDiv类型
+ unit 当前时间单位大小
+ *
+ */
 function drawSpectrumKeywords(svg_g, factor_data, unit) {
 
     //先删除上一个色谱，再画色谱
@@ -16,9 +24,16 @@ function drawSpectrumKeywords(svg_g, factor_data, unit) {
 
     drawSpectrumKeywordsAdaptively(svg_g, factor_data, unit); //按照unit自适应的画色谱图
     addMouseOver(svg_g);
-    //console.log(coherence_all_info);
 }
 
+/**
+ *
+ 自适应的画关键词因素的色谱图
+ svg_g 绘制的svg元素
+ factor_data 因素数据，FactorDiv类型
+ unit 当前时间单位大小
+ *
+ */
 function drawSpectrumKeywordsAdaptively(svg_g, factor_data, unit) {
 
     var type = factor_data.type;
@@ -318,6 +333,13 @@ function drawSpectrumKeywordsAdaptively(svg_g, factor_data, unit) {
         });
 }
 
+/**
+ *
+ 获取因素视图色谱图的最大值
+ @param unit 当前时间单位大小
+ @return 色谱图的最大值
+ *
+ */
 function getKeywordSpectrumMax(unit) {
     var max_value_weight = MIN_NUM;
     var max_value_frequency = MIN_NUM;
@@ -418,6 +440,11 @@ function getKeywordSpectrumMax(unit) {
     return max_value_weight;
 }
 
+/**
+ *
+ 根据当前一致性下拉框的选项选择显示一致or不一致的柱状图
+ *
+ */
 function changeCoherence() {
     d3.selectAll('.div_keywordLine')
         .each(function() {
@@ -444,6 +471,11 @@ function changeCoherence() {
         });
 }
 
+/**
+ *
+ 根据当前选项显示或隐藏因素视图的色谱图
+ *
+ */
 function showOrHiddenFactorSpectrum() {
     switch(which_histogram) {
         case 0:
@@ -465,6 +497,12 @@ function showOrHiddenFactorSpectrum() {
     }
 }
 
+/**
+ *
+ 显示或隐藏权重柱状图
+ @param flag true显示，false不显示
+ *
+ */
 function showOrHiddenWeightHistogram(flag) {
     if(flag) {
         d3.selectAll('.unit_weight')
@@ -475,6 +513,12 @@ function showOrHiddenWeightHistogram(flag) {
     }
 }
 
+/**
+ *
+ 显示或隐藏频率柱状图
+ @param flag true显示，false不显示
+ *
+ */
 function showOrHiddenFreqHistogram(flag) {
     if(flag) {
         d3.selectAll('.unit_freq')
@@ -487,6 +531,12 @@ function showOrHiddenFreqHistogram(flag) {
 
 var MIN_HEIHGT = 1;
 //如果高度太小，则设为最小值
+/**
+ *
+ @param h 当前柱的高度
+ @return 调整后的柱高
+ *
+ */
 function adjustSmallBarHeight(h) {
     if(h == 0) {
         return h;

@@ -22,6 +22,11 @@ var blues  = ['#9ecae1', '#6baed6', '#4292c6', '#2171b5', '#08519c', '#08306b'];
 
 var scale_height_cell = d3.scale.linear().range([10, 30]);
 
+/*
+* 添加拖拽监听
+* @param svg 要添加的svg元素
+* @param listener 监听器方法
+ */
 function addDragListener(svg, listener) {
     var drag = d3.behavior.drag()
         .on('drag', function() {
@@ -35,6 +40,11 @@ function addDragListener(svg, listener) {
     //    .call(drag);
 }
 
+/*
+* 拖拽第二个色谱图
+* @param deltaX 拖拽的横向偏移量
+* @param deltaY 拖拽的纵向偏移量
+ */
 function dragDoubleSpectrum(deltaX, deltaY) {
      d3.selectAll('.double_spectrum')
         .attr('transform', function() {
@@ -47,6 +57,9 @@ function dragDoubleSpectrum(deltaX, deltaY) {
         });
 }
 
+/*
+* 画色谱图
+ */
 function drawSpectrum() {
 
     var flag_double_up_down = false;
@@ -108,11 +121,19 @@ function drawSpectrum() {
     }
 }
 
+/*
+* 删除色谱图
+* @param svg 要删除的色谱图所在的svg元素
+ */
 function delete_spectrum(svg) {
     svg.selectAll(".spectrum").remove();
     svg.selectAll('.y_right').remove();
 }
 
+/*
+* 添加鼠标监听
+* @param svg_g 要添加的svg元素
+ */
 function addMouseOver(svg_g) {
     svg_g
         .selectAll('.unit')
@@ -122,6 +143,12 @@ function addMouseOver(svg_g) {
         });
 }
 
+/*
+* 自适应的画色谱图
+* @param unit 时间单元大小
+* @param svg_change_spectrum 色谱图所在的svg元素
+* @param flag_double_spectrum 是否是第二个色谱图
+ */
 function drawSpectrumAdaptively(unit, svg_change_spectrum, flag_double_spectrum) {
     var model_name = model_names[which_model];
     var extent = x_price.domain();
@@ -365,6 +392,12 @@ function drawSpectrumAdaptively(unit, svg_change_spectrum, flag_double_spectrum)
     }
 }
 //在左边轴下方画文本预测的柱状图
+/*
+* 自适应的画色谱图
+* @param unit 时间单元大小
+* @param svg_change_spectrum 色谱图所在的svg元素
+* @param flag_double_spectrum 是否是第二个色谱图
+ */
 function drawDownSpectrumAdaptively(unit, svg_change_spectrum, flag_double_spectrum) {
     var model_name = model_names[which_model];
     var extent = x_price.domain();
@@ -570,6 +603,12 @@ function drawDownSpectrumAdaptively(unit, svg_change_spectrum, flag_double_spect
     //}
 }
 
+/*
+* 根据类型获得聚集值
+* @param d 原始数据
+* @param which_type 聚集的类型，有预测值、实际值、误差
+* @return 聚集值和最大值
+ */
 function getRollupValueByType(d, which_type) {
     var max_value = MIN_NUM, min_value = MAX_NUM;
     var model_name = model_names[which_model];
@@ -603,36 +642,4 @@ function getRollupValueByType(d, which_type) {
     //    value = -value;     //value保存预测的涨跌信息（涨还是跌）
     //}
     return [value, max_value];
-
-    //var sum_pred_text = d3.sum(d, function(dd){return dd['predict_text_'+model_name];});
-    //var sum_pred_change = d3.sum(d, function(dd){return dd['pred_change_'+model_name];});
-    //var sum_actual_change = d3.sum(d, function(dd){return dd['actual_change'];});
-    //var value;
-    //switch(which_type) {
-    //    case PREDICTION:
-    //        value = sum_pred_change;
-    //        break;
-    //    case ACTUAL:
-    //        value = sum_actual_change;
-    //        break;
-    //    case ERROR:
-    //        value = sum_pred_change-sum_actual_change;
-    //        break;
-    //    case PREDICTION_TEXT:
-    //        value = sum_pred_text;
-    //        break;
-    //    default:
-    //        alert('error in selection!!');
-    //        break;
-    //}
-    //var abs_value = Math.abs(value);
-    //max_value = Math.max(max_value, abs_value);
-    //var tmp = Math.max(Math.abs(sum_pred_change), Math.abs(sum_actual_change));
-    //tmp = Math.max(tmp, Math.abs(sum_pred_change-sum_actual_change));
-    //max_value = Math.max(max_value, tmp);
-    //min_value = Math.min(min_value, abs_value);
-    ////if(sum_pred_change<0&&which_to_show!=ACTUAL) {
-    ////    value = -value;     //value保存预测的涨跌信息（涨还是跌）
-    ////}
-    //return [value, max_value];
 }

@@ -18,6 +18,9 @@ var oCalendarEn=new PopupCalendar("oCalendarEn"); //³õÊ¼»¯¿Ø¼şÊ±,Çë¸ø³öÊµÀıÃû³ÆÈ
     oCalendarEn.setRefreshFunc(selectPeriod);
     oCalendarEn.Init();
 
+/*
+* ÈÕÀúÑ¡ÔñµÄ¼àÌı
+ */
 function selectPeriod() {
     var parseDateOfDay = d3.time.format("%Y-%m-%d %X").parse;
     var starts = d3.select("#select_start").attr("value").split("/");
@@ -31,6 +34,9 @@ function selectPeriod() {
     zoomPeriod(start, end);
 }
 
+/*
+* È¡ÏûÇø¼äÑ¡Ôñ
+ */
 function clearPeriodSelection() {
     svg_price_g.select(".tip-node").remove();
     drawStock(stocks_data, which_price, true);
